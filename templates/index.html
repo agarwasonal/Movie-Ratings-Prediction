@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+      <style>
+        h1 {
+            color:initial;
+        }
+        div.scroll {
+            margin:100px, 100px;
+            padding:10px;
+            background-color:initial;
+            width: 500px;
+            height: 110px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align:justify;
+        }
+      </style>
+
+    <meta charset="UTF-8">
+<div style="text-align: center;">
+
+  <title>Movie Rating Prediction</title>
+  <link href = 'https://fonts.googleapis.com/css?family=Pacifico' rel = 'stylesheet' type='text/css'>
+  <link href = 'https://fonts.googleapis.com/css?family=Arimo' rel = 'stylesheet' type = 'text/css'>
+  <link href = 'https://fonts.googleapis.com/css?family=Hind:300' rel = 'stylesheet' type = 'text/css'>
+  <link href = 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel = 'stylesheet' type = 'text/css'>
+  <link rel = "stylesheet" href = "../static/css/style.css">
+  </head>
+  <body onload="myFunction()">
+    <div class="login">
+
+      <h1>Movie Rating Prediction!</h1>
+      <div class="scroll">
+        <form action = "{{ url_for('predict')}}" method = "post">
+          <input type = "text" name = "collection"  placeholder = "Does it belong any movie collection? Yes or No?"      required = "required" /><br>
+          <input type = "text" name = "budget"        placeholder = "What is the budget of movie?"        required = "required" /><br>
+          <input type = "text" name = "runtime"         placeholder = "Runtime(minutes)?"  required = "required" /><br>
+          <input type = "text" name = "genre" placeholder = "Genre?"     required = "required" /><br>
+          <input type = "text" name = "prod_company" placeholder = "Main Production Company?"     required = "required" /><br>
+          <input type = "text" name = "lead_actor" placeholder = "Lead Actor Name>"     required = "required" /><br>
+          <input type = "text" name = "sup_actor" placeholder = "Supporting Actor Name?"     required = "required" /><br>
+          <input type = "text" name = "director" placeholder = "Director Name?"     required = "required" /><br>
+          <input type = "text" name = "producer" placeholder = "Producer Name?"     required = "required" /><br>
+          <input type = "text" name = "overview" placeholder = "Overview/Description of the movie?"     required = "required" /><br>
+          <button type = "submit" class = "btn btn-primary btn-block btn-large">Predict Movie Rating</button>
+        </form>
+        <h3>Predicted Ratings for the Movie: {{rating}}</h3>
+
+      </div>
+      
+    </div>
+  </body>
+  </html>
+
+
+
+  
